@@ -1,45 +1,57 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema",
+chema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/YOUR_PIPELINE/master/nextflow_schema.json",
     "title": "Nextflow pipeline parameters",
     "description": "This pipeline uses Nextflow and processes some kind of data. The JSON Schema was built using the nf-core pipeline schema builder.",
     "type": "object",
-    "properties": {
-        "int_hidden_one": {
-            "type": "integer",
-            "default": 1,
-            "hidden": true
-        },
-        "str_hidden_one": {
-            "type": "string",
-            "default": "1",
-            "hidden": true
-        },
-        "int_param_one": {
-            "type": "integer",
-            "default": 1
-        },
-        "str_param_one": {
-            "type": "string",
-            "default": "1"
-        },
-        "int_hidden_zero": {
-            "type": "integer",
-            "hidden": true,
-            "default": 0
-        },
-        "str_hidden_zero": {
-            "type": "string",
-            "hidden": true,
-            "default": "0"
-        },
-        "int_param_zero": {
-            "type": "integer",
-            "default": 0
-        },
-        "str_param_zero": {
-            "type": "string",
-            "default": 0
+    "definitions": {
+        "main_group": {
+            "title": "Main group",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "int_hidden_one": {
+                    "type": "integer",
+                    "default": 1,
+                    "hidden": true
+                },
+                "str_hidden_one": {
+                    "type": "string",
+                    "default": "1",
+                    "hidden": true
+                },
+                "int_param_one": {
+                    "type": "integer",
+                    "default": 1
+                },
+                "str_param_one": {
+                    "type": "string",
+                    "default": "1"
+                },
+                "int_hidden_zero": {
+                    "type": "integer",
+                    "hidden": true,
+                    "default": 0
+                },
+                "str_hidden_zero": {
+                    "type": "string",
+                    "hidden": true,
+                    "default": "0"
+                },
+                "int_param_zero": {
+                    "type": "integer",
+                    "default": 0
+                },
+                "str_param_zero": {
+                    "type": "string",
+                    "default": 0
+                }
+            }
         }
-    }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/main_group"
+        }
+    ]
 }
